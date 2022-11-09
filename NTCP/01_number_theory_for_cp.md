@@ -1,3 +1,5 @@
+[Back](/README.md "Free CS")
+
 # Number Theory for Competitive Programming
 
 ---
@@ -5,7 +7,7 @@
 Topics:
 
 - Basics
-  1. [GCD](/NTCP/basics/01_gcd.md "GCD | Number Theory | CP")
+  1. [GCD](/NTCP/basics/01_gcd.md "GCD | Basics | Number Theory")
   2. LCM
   3. Factorial
   4. Prime Factors
