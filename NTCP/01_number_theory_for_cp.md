@@ -5,7 +5,7 @@
 Topics:
 
 - Basics
-  1. GCD
+  1. [GCD](/NTCP/basics/01_gcd.md "GCD | Number Theory | CP")
   2. LCM
   3. Factorial
   4. Prime Factors
