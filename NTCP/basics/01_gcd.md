@@ -20,6 +20,7 @@ def gcd(a, b):
 Simple Solution: For finding the GCD of two numbers we will first find the minimum of the two numbers and then find the highest common factor of that minimum which is also the factor of the other number.
 
 ```cpp
+// GCD Finder : CPP
 #include<iostream>
 using namespace std;
 int gcd(int a, int b){
@@ -44,6 +45,7 @@ int main()
 ```
 
 ```java
+// GCD Finder : Java
 public class CFG{
   static int gcd(int a, int b){
     int result = Math.min(a, b);
@@ -62,6 +64,7 @@ public class CFG{
 }
 ```
 ```python
+# GCD Finder : Python
 def gcd(a, b):
   result = min(a, b)
   while result:
@@ -75,5 +78,28 @@ b = 56
 print(f"GCD of {a} and {b} {gcd(a,b)}")
 ```
 
-**Time Complexity: O(min(a,b))** | ** Auxiliary Space: O(1) / Constant**
+**Time Complexity: O(min(a,b))** | **Auxiliary Space: O(1) / Constant**
+
+> An efficient solution is to use **Euclidean Algorithm which is the main algorithm used for this purpose. The idea is, GCD of two numbers doesn't change if a smaller number is subtracted from a bigger number.
+
+```cpp
+//GCD Finder Euclidean: CPP
+#include<iostream>
+using namespace std;
+int gcd(int a, int b){
+  if(a==0) return b;
+  if(b==0) return a;
+  if(a==b) return a;
+  if(a>b) return gcd(a-b,b);
+  return gcd(a, b-a);
+}
+int main()
+{
+  int a=98, b=56;
+  cout<<"GCD of "<<a<<" and "<<b<<" is: "<<gcd(a, b);
+  return 0;
+}
+```
+**Time Complexity: O(min(a, b))** | **Auxiliary Space: O(min(a,b))**
+
 
