@@ -8,7 +8,7 @@ Topics:
 
 - Basics
   1. [GCD](/NTCP/basics/01_gcd.md "GCD | Basics | Number Theory")
-  2. LCM
+  2. [LCM](/NTCP/basics/02_lcm.md "LCM | Basics | Number Theory")
   3. Factorial
   4. Prime Factors
   5. Binominal Coefficient

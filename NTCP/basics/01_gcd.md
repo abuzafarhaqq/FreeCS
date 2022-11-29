@@ -102,4 +102,56 @@ int main()
 ```
 **Time Complexity: O(min(a, b))** | **Auxiliary Space: O(min(a,b))**
 
+> Dynamic Programming Approach (Top Down Using Memoization):
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+int static dp[1001][1001];
+int gcd(int a, int b){
+  if(a==0) return b;//everything divides 0
+  if(b==0) return a;
+  if(a==b) return a;//base case
+  if(dp[a][b] != -1) return dp[a][b]; //if a value is already present in dp
+  if(a>b) dp[a][b] = gcd(a-b,b);//a is greater.
+  else dp[a][b] = gcd(a, b-a);//b is greater.
+  return dp[a][b];//return dp
+}
+int main(){
+  int a = 98, b = 56;
+  memset(dp, -1, sizeof(dp));
+  cout<<"GCD of "<<a<<" and "<<b<<" is "<<gcd(a, b)<<endl;
+}
+```
+
+**Time Complexity: O(min(a,b))** | **Auxiliary Space: o(1)**
+
+> Instead of Euclidean Algorithm by subtraction, a better approach can be divided the bigger with smaller one. An Example using the Modulo Operator in Euclidean Algorithm:
+
+```cpp
+#include<iostream>
+using namespace std;
+//recursive function return gcd of a, b in single line
+int gcd(int a, int b){
+return b == 0 ? a : gcd(b, a % b);
+}
+int main(){
+int a = 98, b = 56;
+cout<<"GCD of "<<a<<" and "<<b<<" is "<<gcd(a, b);
+
+return 0;
+}
+```
+
+**Time Complexity: O(log(min(a,b)))** | **Auxiliary Space: O(log(min(a,b)))**
+
+> Time Complexity is here O(log(min(a,b))) which is derivation for the worst case scenario. If we go to step by step up like: (1,1) (1,2) (2,3) (3,5) (5,8).
+> We can notice the pattern like: for the nth step the numbers would be (fib(n), fib(n+1)). So, time complexity would be O(n) where a=> fib(n) and b=> fib(n+1).
+> Now, Fibonacci series is an exponentially growing series where the ratio of nth/(n-1)the term approaches (sqrt(5)+1)/2 which is also called the golden ratio.
+> So we can see that the time complexity hence time complexity would be log(min(a,b))
+
+You can request to change here if you don't like it.
+
+---
+
+[Back](/NTCP/01_number_theory_for_cp.md "Number Theory") | [Home Page](/README.md "Free CS") | [Next Page: LCM](/NTCP/basics/02_lcm.md "LCM | Basics | Number Theory")
 
